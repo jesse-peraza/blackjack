@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(black-jack-table-made-of-green-cloth-isolated-on-white-background.jpg_s=1024x1024&w=is&k=20&c=JZjLjDk55mFMAwDMTCIBKTKRr2G0IyhrKy4TCzx33gY=.jpg);
+    background-position: top;
+    font-family: 'NATS Regular';
+}

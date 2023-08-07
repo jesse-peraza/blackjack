@@ -3,11 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="main.js"></script>
+    <script defer src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <title>Blackjack</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>BLACKJACK</h1>
+    <div class="Dealer">
+        <h2>Dealer: <span id="dealer-hand"></span></h2>
+    </div>
+    <div class="Player">
+        <h2>Player: <span id="player-hand"></span></h2>
+    </div>
+    <section class="action-pane">
+        <div class="betting">
+            <div class="bet-heading">
+                <p>Balance</p>
+                <p>Bet</p>
+            </div>
+            <div class="bank">
+                <p id="bank-balance">$1000</p>
+            </div>
+            <div class="bet">
+                <input type="text" id="bet-amount" value="Enter wager here">
+            </div>
+        </div>
+        <div class="player-action">
+            <div class="hitBtn">
+                <button id="hit">hit</button>
+            </div>
+            <div class="standBtn">
+                <button id="stand">stand</button>
+            </div>
+            <div class="dealBtn">
+                <button id="deal">deal</button>
+            </div>
+        </div>
+        <div class="winnings">
+            <div class="win-heading">
+                <p>Win</p>
+            </div>
+            <div class="money">
+                <p id="winnings-earned">$10</p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
