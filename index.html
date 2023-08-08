@@ -5,38 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/card-library/css/cardstarter.min.css" />
     <title>Blackjack</title>
 </head>
 <body>
     <h1>BLACKJACK</h1>
-    <div class="Dealer">
-        <h2>Dealer: <span id="dealer-hand"></span></h2>
-    </div>
-    <div class="Player">
-        <h2>Player: <span id="player-hand"></span></h2>
+    <div class="image">
+        <div class="player-dealer">
+            <h2 class="dealer">Dealer: <span id="dealer-hand"></span></h2>
+            <h2>Player: <span id="player-hand"></span></h2>
+        </div>
     </div>
     <section class="action-pane">
         <div class="betting">
-            <div class="bet-heading">
-                <p>Balance</p>
-                <p>Bet</p>
+            <div class="heading">
+                <div class="balance-heading">
+                    <p>Balance</p>
+                </div>
+                <div class="bet-heading">
+                    <p>Bet</p>
+                </div>
             </div>
-            <div class="bank">
-                <p id="bank-balance">$1000</p>
-            </div>
-            <div class="bet">
-                <input type="text" id="bet-amount" value="Enter wager here">
+            <div class="inventory">
+                <div class="bank">
+                    <p id="bank-balance">$1000</p>
+                </div>
+                <div class="bet">
+                    <input type="text" id="bet-amount" placeholder="Enter wager">
+                </div>
             </div>
         </div>
         <div class="player-action">
             <div class="hitBtn">
-                <button id="hit">hit</button>
+                <button id="hit">HIT</button>
             </div>
             <div class="standBtn">
-                <button id="stand">stand</button>
+                <button id="stand">STAND</button>
             </div>
             <div class="dealBtn">
-                <button id="deal">deal</button>
+                <button id="deal">DEAL</button>
             </div>
         </div>
         <div class="winnings">

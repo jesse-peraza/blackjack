@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Aoboshi+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Vithkuqi&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +8,95 @@
 }
 
 body {
-    background-image: url(black-jack-table-made-of-green-cloth-isolated-on-white-background.jpg_s=1024x1024&w=is&k=20&c=JZjLjDk55mFMAwDMTCIBKTKRr2G0IyhrKy4TCzx33gY=.jpg);
+    font-family: 'Noto Sans Vithkuqi', sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+
+.image {
+    background-image: url(blackjack-table.png);
     background-position: top;
-    font-family: 'NATS Regular';
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    margin-top: -20vh;
+    position: absolute;
+}
+
+h1 {
+    font-family: 'Aoboshi One', serif;  
+    font-size: 6vmin;
+    text-align: center;
+}
+
+.player-dealer{
+    margin-top: 22vh;
+    margin-left: 45vw;
+}
+
+.dealer{
+    margin-bottom: 43vh;
+}
+
+.action-pane {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 25vh;
+    margin: 70vh 1vw auto 1vw;
+    font-size: 2.5vmin;
+}
+
+.betting {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    border: 0.25vh solid black;
+    border-radius: 35px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-bottom: 0.25vh solid black;
+}
+
+.inventory {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+input {
+    width: 8.5vw;
+    font-family: 'Noto Sans Vithkuqi', 'sans-serif';
+}
+
+button {
+    font-family: 'Noto Sans Vithkuqi', sans-serif;
+    border-radius: 50%;
+    padding: 1vmin;
+    font-size: 2vmin;
+}
+
+.player-action{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 25vmin;
+}
+
+.winnings {
+    border: 0.25vh solid black;
+    border-radius: 35px;
+    width: 10vw;
+    text-align: center;
+}
+
+.win-heading {
+    border-bottom: 0.25vh solid black;
 }

@@ -45,7 +45,7 @@ lose: hand value exceeds 21
 1. build deck function, shuffle deck function
 2. Initial state of game: no cards, bets cleared, winnings cleared, bank balance remains
 3. Prompt that tells the player what action is required("time to bet!" etc.)
-4. Store a wager amount in an input field that will be used to calculate winnings for the round later
+4. Store a wager amount in an input field that will be used to calculate winnings for the round later (parseInt)
     -wager amount is subtracted from bank
 5. deal cards function
     -deal cards to player 
