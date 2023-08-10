@@ -86,8 +86,18 @@ function renderHands(card) {
 }
 
 function handValue() {
+ 	let playerValue = 0
+ 	let aceCount = 0
+ 	for (let i=0; i< playerHand.length; i++) {
+ 		playerValue += playerHand[i].value
+ 		if(playerHand[i].face ===  'sA' || 'cA' || 'dA' || 'hA') {
+			aceCount++ }
+		for (let j=aceCount; j>0; j--) {
+			if(playerValue > 21) {
+				playerValue -= 10}
+		}	
+	} console.log(playerValue)
+} 
 
-}
-
-//Ace = 11, if value is >21 --- forEach Ace subtract 10 until <= 21
+//Ace = 11, if value is >21 --- forEach Ace subtract 10 from plaeryValue until <= 21
 //so have an AceCount and a total for the hand 
