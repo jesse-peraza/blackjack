@@ -68,6 +68,13 @@ function dealHands() {
 }
 
 function renderHands(card) {
+	while(playerHandEl.firstChild) {
+		playerHandEl.removeChild(playerHandEl.lastChild)
+	}
+	while(dealerHandEl.firstChild) {
+		dealerHandEl.removeChild(dealerHandEl.lastChild)
+	}
+
 	playerHand.forEach((card) => {
 		let pcardEl = document.createElement('span')
 		pcardEl.innerHTML = `<span class="card ${card.face}"></span>`
@@ -84,7 +91,7 @@ function hitFxn() {
 	const randomCardIdx = Math.floor(Math.random() * shuffledDeck.length)
 	const newCard = shuffledDeck.slice(randomCardIdx, (randomCardIdx + 1))[0]
 	playerHand.push(newCard)
-	//render new Card
+	renderHands()
 	pHandValue()
 }
 
