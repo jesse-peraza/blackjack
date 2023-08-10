@@ -18,9 +18,9 @@ actionEls.addEventListener('click', evt => {
 		return;
 	} else {
 		if(evt.target.innerText === 'HIT') {
-			console.log('hit')
+			hitFxn()
 		} else if (evt.target.innerText === 'STAND') {
-			console.log('stand')
+			standFxn()
 		} else if (evt.target.innerText === 'DEAL') {
 			renderHands()
 		}
@@ -36,10 +36,6 @@ function init() {
 	dealerHand = []
 	dealHands()
 }
-
-// function render() {
-// 	renderHands()
-// }
 
 function buildOriginalDeck() {
 	const deck = []
@@ -68,8 +64,7 @@ function dealHands() {
 	for(let i=0; i < 2; i++) {
 		playerHand = shuffledDeck.slice(0,2);
 		dealerHand = shuffledDeck.slice(2,4);
-		handValue()
-	}
+	} pHandValue()
 }
 
 function renderHands(card) {
@@ -85,19 +80,61 @@ function renderHands(card) {
 	})
 }
 
-function handValue() {
+function hitFxn() {
+	const randomCardIdx = Math.floor(Math.random() * shuffledDeck.length)
+	const newCard = shuffledDeck.slice(randomCardIdx, (randomCardIdx + 1))[0]
+	playerHand.push(newCard)
+	//render new Card
+	pHandValue()
+}
+
+function standFxn() {
+	dealerTurn()
+}
+
+function dealerTurn() {
+
+	//while(dealerValue < 17)
+}
+
+function checkWin() {
+	
+}
+
+function pHandValue() {
  	let playerValue = 0
- 	let aceCount = 0
+ 	let pAceCount = 0
  	for (let i=0; i< playerHand.length; i++) {
  		playerValue += playerHand[i].value
- 		if(playerHand[i].face ===  'sA' || 'cA' || 'dA' || 'hA') {
-			aceCount++ }
-		for (let j=aceCount; j>0; j--) {
+ 		if(playerHand[i].face ===  ('sA' || 'cA' || 'dA' || 'hA')) {
+			pAceCount++ }
+		for (let j=pAceCount; j>0; j--) {
 			if(playerValue > 21) {
 				playerValue -= 10}
 		}	
 	} console.log(playerValue)
 } 
 
+function dHandValue() {
+	let dealerValue = 0
+	let dAceCount = 0
+	for (let i=0; i< dealerHand.length; i++) {
+		dealerValue += dealerHand[i].value
+		if(dealerHand[i].face ===  ('sA' || 'cA' || 'dA' || 'hA')) {
+		   dAceCount++ }
+	   for (let j=dAceCount; j>0; j--) {
+		   if(dealerValue > 21) {
+			   dealerValue -= 10}
+	   }	
+	}
+}
+
+
 //Ace = 11, if value is >21 --- forEach Ace subtract 10 from plaeryValue until <= 21
 //so have an AceCount and a total for the hand 
+
+/* 
+how to Render new card on hit? if i call renderHands() it renders not just the new card 
+but the original 2 as well.
+how do I render the first dealer card face down?
+*/
