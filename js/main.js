@@ -66,12 +66,9 @@ function getNewShuffleDeck() {
 
 function dealHands() {
 	for(let i=0; i < 2; i++) {
-		let card = shuffledDeck.pop()
-		playerHand.push(card)
-	}
-	for(let i=0; i < 2; i++) {
-		let card = shuffledDeck.pop()
-		dealerHand.push(card)
+		playerHand = shuffledDeck.slice(0,2);
+		dealerHand = shuffledDeck.slice(2,4);
+		handValue()
 	}
 }
 
@@ -88,3 +85,9 @@ function renderHands(card) {
 	})
 }
 
+function handValue() {
+
+}
+
+//Ace = 11, if value is >21 --- forEach Ace subtract 10 until <= 21
+//so have an AceCount and a total for the hand 
