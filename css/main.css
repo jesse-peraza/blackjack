@@ -34,8 +34,12 @@ h1 {
     margin-left: 45vw;
 }
 
-.dealer{
-    margin-bottom: 43vh;
+#dealer-hand{
+    margin-bottom: 32vh;
+}
+
+#player-hand{
+    
 }
 
 .action-pane {

@@ -72,7 +72,6 @@ lose: hand value exceeds 21
 
 
 #Brainstorm
--card rank array (card and value of card)
 -store A with two key-value pairs -> Ace high/Ace low ->
 -for betting system -> input values + conditional. ex: if win - return input * 2 etc.
 -odds for pulling a card stay the same (6 or 8 deck game, odds of pulling a certain card stay basically the same)
