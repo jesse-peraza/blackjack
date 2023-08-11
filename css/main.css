@@ -45,7 +45,7 @@ h1 {
 .action-pane {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     height: 25vh;
     margin: 70vh 1vw auto 1vw;
@@ -91,14 +91,19 @@ button {
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    width: 25vmin;
+    width: 25vw;
 }
 
 .winnings {
+    width: 25vw;
+    text-align: center;
+}
+
+.winnings-sub {
     border: 0.25vh solid black;
     border-radius: 35px;
     width: 10vw;
-    text-align: center;
+    margin: auto;
 }
 
 .win-heading {

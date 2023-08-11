@@ -84,6 +84,9 @@ function renderHands(card) {
 		dcardEl.innerHTML = `<span class="card ${card.face}"></span>`
 		dealerHandEl.appendChild(dcardEl)
 	})
+	if (dealerHand.length === 2) {
+		dealerHandEl.children[0].className = 'card back'
+	}
 }
 
 function renderInit() {
@@ -103,7 +106,7 @@ function hitFxn() {
 	if(playerValue > 21) {
 		messageEl.innerText = 'Bust'
 		messageEl.style.display = 'block'
-		setTimeout(renderInit, 3000)
+		setTimeout(renderInit, 4000)
 	}
 }
 
@@ -139,7 +142,7 @@ function checkWin() {
 		messageEl.innerText = 'Dealer wins.'
 		messageEl.style.display = 'block'
 	}
-	setTimeout(renderInit, 3000)
+	setTimeout(renderInit, 4000)
 }
 
 function pHandValue() {
@@ -169,8 +172,3 @@ function dHandValue() {
 	   }	
 	} return dealerValue
 }
-
-
-
-//message: Bust, Win, or Push
-// if dealer hand length === 2 add class of card back 
