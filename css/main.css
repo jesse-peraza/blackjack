@@ -17,9 +17,10 @@ body {
     background-image: url(blackjack-table.png);
     background-position: top;
     background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    margin-top: -20vh;
+    width: 80vw;
+    height: 80vh;
+    margin-top: -4vh;
+    margin-left: 10vw;
     position: absolute;
 }
 
@@ -29,17 +30,21 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-size: 2.5vmin;
+}
+
 .player-dealer{
-    margin-top: 22vh;
-    margin-left: 45vw;
+    text-align: center;
+    margin-top: 7vh;
+}
+
+.player-dealer > h2 {
+    margin-bottom: 1vh;
 }
 
 #dealer-hand{
-    margin-bottom: 32vh;
-}
-
-#player-hand{
-    
+    margin-bottom: 38vh;
 }
 
 .action-pane {
@@ -84,6 +89,15 @@ button {
     border-radius: 50%;
     padding: 1vmin;
     font-size: 2vmin;
+    cursor: pointer;
+}
+
+#hit {
+    background: radial-gradient(circle, #105b2b, #013214);
+}
+
+#deal {
+    background: radial-gradient(circle, #9b393f, #86242a);
 }
 
 .player-action{

@@ -13,6 +13,8 @@ Some rules:
 
 ## The Game
 
+![Game Image](css/blackjack.png)
+
 **Deal.** Click on *_deal_*. The 'dealer' will start the game by dealing two cards to the player and two cards for herself, one card will be dealt face down. Now we play!
 
 **Play.** You decide how you want to play the hand. First, add the card values together, and get a hand total. If your hand total is 21, congrats! That's blackjack! Otherwise, you have some decisions to make. You can *_stand_* (click stand) if you are satisfied with your hand, this moves the turn to the dealer. You can also *_hit_* (click hit) if you would like more cards to improve your hand total. This will deal one card at a time until you either 'Bust' (go over 21) or are satisfied with your hand and *_stand_* (click stand), which will then move the turn to the dealer.
