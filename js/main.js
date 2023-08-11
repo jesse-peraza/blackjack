@@ -6,7 +6,7 @@ const originalDeck = buildOriginalDeck();
 
 /*----- state variables -----*/
 let shuffledDeck, playerHand, dealerHand
-//dealerValue, playerValue
+
 
 /*----- cached elements  -----*/
 const dealerHandEl = document.getElementById('dealer-hand')
@@ -14,16 +14,12 @@ const playerHandEl = document.getElementById('player-hand')
 const actionEls = document.querySelector('.player-action')
 /*----- event listeners -----*/
 actionEls.addEventListener('click', evt => {
-	if(evt.target.tagName !== 'BUTTON') {
-		return;
-	} else {
-		if(evt.target.innerText === 'HIT') {
-			hitFxn()
-		} else if (evt.target.innerText === 'STAND') {
-			standFxn()
-		} else if (evt.target.innerText === 'DEAL') {
-			renderHands()
-		}
+	if(evt.target.innerText === 'HIT') {
+		hitFxn()
+	} else if (evt.target.innerText === 'STAND') {
+		standFxn()
+	} else if (evt.target.innerText === 'DEAL') {
+		renderHands()
 	}
 })
 
@@ -64,7 +60,9 @@ function dealHands() {
 	for(let i=0; i < 2; i++) {
 		playerHand = shuffledDeck.slice(0,2);
 		dealerHand = shuffledDeck.slice(2,4);
-	} pHandValue()
+	}
+	dealerValue = dHandValue()
+	playerValue = pHandValue()
 }
 
 function renderHands(card) {
@@ -87,25 +85,53 @@ function renderHands(card) {
 	})
 }
 
+function renderInit() {
+	playerHandEl.innerHTML = ''
+	dealerHandEl.innerHTML = ''
+	init()
+}
+
 function hitFxn() {
 	const randomCardIdx = Math.floor(Math.random() * shuffledDeck.length)
 	const newCard = shuffledDeck.slice(randomCardIdx, (randomCardIdx + 1))[0]
 	playerHand.push(newCard)
 	renderHands()
-	pHandValue()
+	playerValue = pHandValue()
+	if(playerValue > 21) {
+		console.log('bust') //---------message log goes here---------------//
+		setTimeout(renderInit, 4000)
+	}
 }
 
 function standFxn() {
+	console.log('hello')
 	dealerTurn()
 }
 
 function dealerTurn() {
-
-	//while(dealerValue < 17)
+	const randomCardIdx = Math.floor(Math.random() * shuffledDeck.length)
+	const newCard = shuffledDeck.slice(randomCardIdx, (randomCardIdx + 1))[0]
+	while(dealerValue < 17) { 
+		dealerValue = dHandValue()
+		dealerHand.push(newCard)
+	}
+	renderHands()
+	checkWin()
 }
 
 function checkWin() {
-	
+	dealerValue = dHandValue()
+	playerValue = pHandValue()
+	if(dealerValue > 21) {
+		console.log('you win') //--------message log goes here--------//
+	} else if(playerValue === dealerValue) {
+		console.log('push, you tied') //--------message log goes here--------//
+	} else if(playerValue > dealerValue) {
+		console.log('you win') //--------message log goes here--------//
+	} else if(playerValue < dealerValue) {
+		console.log('you lose') //--------message log goes here--------//
+	}
+	setTimeout(renderInit, 4000)
 }
 
 function pHandValue() {
@@ -119,7 +145,7 @@ function pHandValue() {
 			if(playerValue > 21) {
 				playerValue -= 10}
 		}	
-	} console.log(playerValue)
+	} return playerValue
 } 
 
 function dHandValue() {
@@ -133,15 +159,10 @@ function dHandValue() {
 		   if(dealerValue > 21) {
 			   dealerValue -= 10}
 	   }	
-	}
+	} return dealerValue
 }
 
 
-//Ace = 11, if value is >21 --- forEach Ace subtract 10 from plaeryValue until <= 21
-//so have an AceCount and a total for the hand 
 
-/* 
-how to Render new card on hit? if i call renderHands() it renders not just the new card 
-but the original 2 as well.
-how do I render the first dealer card face down?
-*/
+//message: Bust, Win, or Push
+// if dealer hand length === 2 add class of card back 
