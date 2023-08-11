@@ -35,6 +35,6 @@ Click [here](https://jesse-peraza.github.io/blackjack/) to play.
 ## Future Features
 * additional styling: 
   refining CSS, card flip animations, card overlap styling, a visible deck maybe?
-* implementing more blacjack features
+* implementing more blackjack features:
   double down, split, betting
 * refactoring code to be more *_DRY_*
