@@ -12,6 +12,7 @@ let shuffledDeck, playerHand, dealerHand
 const dealerHandEl = document.getElementById('dealer-hand')
 const playerHandEl = document.getElementById('player-hand')
 const actionEls = document.querySelector('.player-action')
+const messageEl = document.getElementById('win-message')
 /*----- event listeners -----*/
 actionEls.addEventListener('click', evt => {
 	if(evt.target.innerText === 'HIT') {
@@ -88,6 +89,8 @@ function renderHands(card) {
 function renderInit() {
 	playerHandEl.innerHTML = ''
 	dealerHandEl.innerHTML = ''
+	messageEl.innerText = ''
+	messageEl.style.display = 'none'
 	init()
 }
 
@@ -98,8 +101,9 @@ function hitFxn() {
 	renderHands()
 	playerValue = pHandValue()
 	if(playerValue > 21) {
-		console.log('bust') //---------message log goes here---------------//
-		setTimeout(renderInit, 4000)
+		messageEl.innerText = 'Bust'
+		messageEl.style.display = 'block'
+		setTimeout(renderInit, 3000)
 	}
 }
 
@@ -123,15 +127,19 @@ function checkWin() {
 	dealerValue = dHandValue()
 	playerValue = pHandValue()
 	if(dealerValue > 21) {
-		console.log('you win') //--------message log goes here--------//
+		messageEl.innerText = 'You win!'
+		messageEl.style.display = 'block'
 	} else if(playerValue === dealerValue) {
-		console.log('push, you tied') //--------message log goes here--------//
+		messageEl.innerText = 'Push. Tie.'
+		messageEl.style.display = 'block'
 	} else if(playerValue > dealerValue) {
-		console.log('you win') //--------message log goes here--------//
+		messageEl.innerText = 'You win!'
+		messageEl.style.display = 'block'
 	} else if(playerValue < dealerValue) {
-		console.log('you lose') //--------message log goes here--------//
+		messageEl.innerText = 'Dealer wins.'
+		messageEl.style.display = 'block'
 	}
-	setTimeout(renderInit, 4000)
+	setTimeout(renderInit, 3000)
 }
 
 function pHandValue() {
